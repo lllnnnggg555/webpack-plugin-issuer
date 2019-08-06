@@ -13,11 +13,11 @@ module.exports = {
     'project': './tsconfig.json',
     'sourceType': 'module'
   },
-  'plugins': ['react', '@typescript-eslint'],
+  'plugins': ['@typescript-eslint'],
   'extends': [
     'standard',
-    'standard-react',
-    'plugin:import/recommended'
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended'
   ],
   'rules': {
     'no-var': 2,
@@ -32,22 +32,10 @@ module.exports = {
       'destructuring': 'any',
       'ignoreReadBeforeAssign': false
     }],
+    '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/no-unused-vars': 2,
-    'standard/no-callback-literal': 0,
-    'react/jsx-first-prop-new-line': 0,
-    'react/destructuring-assignment': 0,
-    'react/jsx-max-props-per-line': [2, {
-      'maximum': 5,
-      'when': 'multiline'
-    }],
-    'react/jsx-filename-extension': [1, {
-      'extensions': ['.js', '.jsx', '.ts', '.tsx']
-    }],
-    'react/prop-types': [
-      0, {
-        ignore: ['children']
-      }
-    ]
+    '@typescript-eslint/no-var-requires': 1,
+    'standard/no-callback-literal': 0
   },
   'env': {
     'browser': true,
@@ -55,12 +43,5 @@ module.exports = {
     'es6': true,
     'node': true,
     'mocha': true
-  },
-  'settings': {
-    'import/resolver': {
-      [path.resolve('./plugin/resolver')]: {
-        fish: '@sdp.nd/fish'
-      }
-    }
   }
 }

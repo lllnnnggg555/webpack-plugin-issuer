@@ -20,7 +20,6 @@ function copyFileTo (dir) {
 
 function build (dir) {
   return function (cb) {
-    process.env.BABEL_ENV = dir
     gulp.src(path.resolve(__dirname, './src/**/*.?(js|jsx|ts|tsx)'))
       .pipe(babel())
       .pipe(gulp.dest(path.resolve(__dirname, `./${dir}`)))
@@ -32,12 +31,4 @@ const buildLib = gulp.series(removeDir('lib'), copyFileTo('lib'), build('lib'))
 
 gulp.task('lib', buildLib)
 
-const buildModule = gulp.series(removeDir('module'), copyFileTo('module'), build('module'))
-
-gulp.task('module', buildModule)
-
-const buildModern = gulp.series(removeDir('modern'), copyFileTo('modern'), build('modern'))
-
-gulp.task('modern', buildModern)
-
-gulp.task('default', gulp.series(buildLib, buildModule, buildModern))
+gulp.task('default', buildLib)
