@@ -16,7 +16,6 @@ module.exports = {
   'plugins': ['@typescript-eslint'],
   'extends': [
     'standard',
-    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended'
   ],
   'rules': {
