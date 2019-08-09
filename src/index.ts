@@ -1,7 +1,7 @@
-import webpack from 'webpack'
+import * as fs from 'fs'
+import * as path from 'path'
 
-const fs = require('fs')
-const path = require('path')
+import webpack = require('webpack')
 
 interface IssuerPluginOptions {
   reg: RegExp;
