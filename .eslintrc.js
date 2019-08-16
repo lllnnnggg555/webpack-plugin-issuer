@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   'root': true,
   'parser': '@typescript-eslint/parser',
@@ -9,8 +7,6 @@ module.exports = {
       'experimentalObjectRestSpread': true,
       'jsx': true
     },
-    'useJSXTextNode': true,
-    'project': './tsconfig.json',
     'sourceType': 'module'
   },
   'plugins': ['@typescript-eslint'],

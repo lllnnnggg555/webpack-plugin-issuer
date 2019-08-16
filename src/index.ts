@@ -28,4 +28,5 @@ class IssuerPlugin {
   }
 }
 
-module.exports = IssuerPlugin
+exports.default = IssuerPlugin
+module.exports = exports.default
