@@ -16,7 +16,7 @@ class IssuerPlugin {
   }
 
   public apply(compiler: webpack.Compiler): void {
-    compiler.hooks.done.tapAsync('IssuerPlugin', (stats): void => {
+    compiler.hooks.done.tap('IssuerPlugin', (stats): void => {
       const statsData = stats.toJson().modules
       const file = fs.createWriteStream(path.join(process.cwd(), this.options.output || 'issuer.txt'))
       statsData.forEach((data): void => {
